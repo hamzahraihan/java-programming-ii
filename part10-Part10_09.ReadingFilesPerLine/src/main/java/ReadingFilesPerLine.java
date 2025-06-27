@@ -11,7 +11,18 @@ public class ReadingFilesPerLine {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // test the method here
+        String file = scanner.nextLine();
+        read(file);
+    }
 
+    public static List<String> read(String file) {
+
+        try {
+            return Files.lines(Paths.get(file)).collect(Collectors.toList());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return new ArrayList<String>();
     }
 
 }
