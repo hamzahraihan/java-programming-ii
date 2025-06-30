@@ -10,7 +10,6 @@ package application;
  * @author Hamzah Raihan
  */
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class AverageSensor implements Sensor {
 
@@ -26,10 +25,10 @@ public class AverageSensor implements Sensor {
         this.sensors.add(sensor);
     }
 
-     public List<Integer> readings() {
+    public List<Integer> readings() {
         return this.readings;
     }
-    
+
     @Override
     public boolean isOn() {
         return this.sensors.stream().allMatch(Sensor::isOn);
@@ -59,5 +58,4 @@ public class AverageSensor implements Sensor {
         return (int) averageRead;
     }
 
-   
 }
